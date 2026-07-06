@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Mini CT Viewer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="topBar">
+      <item>
+       <widget class="QPushButton" name="btnOpenFolder">
+        <property name="text"><string>Open Folder...</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnPrevSlice">
+        <property name="text"><string>&lt; Prev</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="sliceSlider">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnNextSlice">
+        <property name="text"><string>Next &gt;</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblSliceInfo">
+        <property name="minimumSize"><size><width>110</width><height>0</height></size></property>
+        <property name="text"><string>Slice 0 / 0</string></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="ImageViewer" name="imageViewer"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="bottomBar">
+      <item>
+       <widget class="QLabel" name="lblBrightness">
+        <property name="text"><string>Brightness</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="brightnessSlider">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+        <property name="minimum"><number>-255</number></property>
+        <property name="maximum"><number>255</number></property>
+        <property name="value"><number>0</number></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblContrast">
+        <property name="text"><string>Contrast</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="contrastSlider">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+        <property name="minimum"><number>0</number></property>
+        <property name="maximum"><number>300</number></property>
+        <property name="value"><number>100</number></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="annotationBar">
+      <item>
+       <widget class="QPushButton" name="btnZoomIn">
+        <property name="text"><string>Zoom In</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnZoomOut">
+        <property name="text"><string>Zoom Out</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnFitWindow">
+        <property name="text"><string>Fit Window</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnToolNone">
+        <property name="text"><string>Pan / Select</string></property>
+        <property name="checkable"><bool>true</bool></property>
+        <property name="checked"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnToolLine">
+        <property name="text"><string>Line</string></property>
+        <property name="checkable"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnToolRect">
+        <property name="text"><string>Rectangle</string></property>
+        <property name="checkable"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnClearAnnotations">
+        <property name="text"><string>Clear Annotations</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblMeasurement">
+        <property name="text"><string></string></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageViewer</class>
+   <extends>QGraphicsView</extends>
+   <header>imageviewer.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
